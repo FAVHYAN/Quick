@@ -1,0 +1,35 @@
+<div class="container-fluid primary">
+	<div class="container">
+		<label><h1>{{title}}</h1></label>
+	</div>
+
+	<section class="row">
+		<div class="md-form active-cyan active-cyan-2 mb-3">
+			<input class="form-control" type="text" [(ngModel)]="movieTitle"  placeholder="Titulo"  aria-label="Titulo">
+		</div>
+		<button  class="btn btn-primary btn-sm" (click)="searchForMovie(movieTitle)">Buscar</button>
+	</section>
+
+	<section class="row filter">
+		<div class="form-check">
+		  <label class="form-check-label">
+		    <input type="radio" class="form-check-input" name="optradio">Movie
+		  </label>
+		</div>
+		<div class="form-check">
+		  <label class="form-check-label">
+		    <input type="radio" class="form-check-input" name="optradio">Serie
+		  </label>
+		</div>
+	</section>
+
+	<section class="col-md-12" id="content-Boxes">
+		<ul class="row">
+			<li *ngFor="let movie of movies" class="col-md-3" id="contentsBox">
+					<h4>{{movie.Title}}</h4>
+					<img src="{{movie.Poster}}" />	
+			</li>
+		</ul>
+	</section>
+</div>
+
